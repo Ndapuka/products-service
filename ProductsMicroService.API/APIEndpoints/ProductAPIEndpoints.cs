@@ -40,7 +40,7 @@ public static class ProductAPIEndpoints
         });
 
         //Get /api/products/search/product-id/{SearchString}
-
+        // This endpoint searches products by ProductName (string) test     
         app.MapGet("/api/products/search/product-id/{SearchString}", async (IProductsService productsService, string SearchString) =>
         {
             List<ProductResponse?> productsByProductName = await productsService.GetProductsByCondicion(temp => temp.ProductName != null && temp.ProductName.Contains(SearchString, StringComparison.OrdinalIgnoreCase));
